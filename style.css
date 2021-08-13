@@ -1,0 +1,19 @@
+body
+{
+    background-position: center;
+    background-size: contain;
+}
+#myCanvas
+{
+    border-width: 10px;
+    border-style: ridge;
+	background-color: forestgreen;
+}
+
+
+#hd3
+{
+	display: inline-block;
+	color: white;
+	font-family: fantasy;
+}
