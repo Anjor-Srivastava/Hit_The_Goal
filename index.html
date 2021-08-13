@@ -16,11 +16,70 @@
 </head>
 
 <body onload="load_img()">
+	<div data-toggle="modal" data-target="#help"> 
+		<button class="btn btn-primary btn-lg">Help</button>
+	</div>
+	<div id="help" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4>Help</h4>
+				</div>
+				<div class="modal-body">
+					<p>
+						Move the ball into the goal!
+					</p>
+					<table>
+						<caption class="text-capitalize">keys and their use</caption>
+						<tr>
+							<th>Key Name</th>
+							<th>Use of key</th>
+						</tr>
+						<tr>
+							<td>Up Arrow Key</td>
+							<td>Move Up</td>
+						</tr>
+						<tr>
+							<td>Down Arrow Key</td>
+							<td>Move Down</td>
+						</tr>
+						<tr>
+							<td>Left Arrow Key</td>
+							<td>Move Left</td>
+						</tr>
+						<tr>
+							<td>Right Arrow Key</td>
+							<td>Move Right</td>
+						</tr>
+						<tr>
+							<td>W Key</td>
+							<td>Move Up</td>
+						</tr>
+						<tr>
+							<td>A Key</td>
+							<td>Move Left</td>
+						</tr>
+						<tr>
+							<td>S Key</td>
+							<td>Move Down</td>
+						</tr>
+						<tr>
+							<td>D Key</td>
+							<td>Move Right</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
 	<center>
 		<section id="avail" style="display: none;">
 			<h3 id="hd3" class="text-capitalize">hit the goal</h3>
 			<br>
 			<canvas id="myCanvas" height="500" width="1100"></canvas>
+			<br>
+			<button id="reset" class="btn btn-primary btn-lg" onclick="reset()" style="display: none;">Reset</button>
 		</section>
 		<section id="nan" style="display: none;">
 			<h1>You cannot open this website as you need a keyboard</h1>

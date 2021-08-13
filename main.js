@@ -1,5 +1,7 @@
 var canvas = new fabric.Canvas("myCanvas");
 
+var cheer = 0;
+
 var ball_y = 0;
 var ball_x = 0;
 var hole_y = 400;
@@ -74,9 +76,14 @@ function my_keydown(e)
 	{
 		canvas.remove(ball_obj);
 		document.getElementById("hd3").innerHTML = "you have hit a goal!";
+		document.getElementById("hd3").style.color = "red";
 		document.getElementById("myCanvas").style.borderColor = "red";
-		left_cheer();
-		right_cheer();
+		document.getElementById("reset").style.display = "block";
+		if (cheer == 0) {
+			left_cheer();
+			right_cheer();
+			cheer++;
+		}
 	}
 	else
 	{
@@ -96,6 +103,26 @@ function my_keydown(e)
 			console.log("left");
 		}
 		if(keyPressed == '39')
+		{
+			right();
+			console.log("right");
+		}
+		if(keyPressed == '87')
+		{
+			up();
+			console.log("up");
+		}
+		if(keyPressed == '83')
+		{
+			down();
+			console.log("down");
+		}
+		if(keyPressed == '65')
+		{
+			left();
+			console.log("left");
+		}
+		if(keyPressed == '68')
 		{
 			right();
 			console.log("right");
@@ -153,6 +180,18 @@ function right()
 		canvas.remove(ball_obj);
 		new_image();
 	}
+}
+
+function reset() {
+	canvas.clear();
+	cheer = 0;
+	ball_x = 0;
+	ball_y = 0;
+	load_img();
+	document.getElementById("myCanvas").style.borderColor = "white";
+	document.getElementById("hd3").style.color = "white";
+	document.getElementById("hd3").innerHTML = "hit the goal";
+	document.getElementById("reset").style.display = "none";
 }
 
 if (screen.width < 992) {
